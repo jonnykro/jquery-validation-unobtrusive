@@ -63,6 +63,9 @@
         else {
             error.hide();
         }
+        
+        // Custom trigger.
+        $(document).trigger("unobtrusive-validation-error", error[0].id.replace(/-error$/, ''));
     }
 
     function onErrors(event, validator) {  // 'this' is the form element
@@ -93,6 +96,9 @@
                 container.empty();
             }
         }
+        
+        // Custom trigger.
+        $(document).trigger("unobtrusive-validation-success", error[0].id.replace(/-error$/, ''));
     }
 
     function onReset(event) {  // 'this' is the form element
